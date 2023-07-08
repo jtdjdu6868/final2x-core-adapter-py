@@ -36,6 +36,7 @@ class Adapter():
             logger.warning("CV2 load image failed: " + src_path + ", skip. ")
             logger.warning("______Skip_Image______: " + src_path)
             PrintProgressLog().skipProgress()
+            return False
         logger.info("Processing: " + src_path + ", save to: " + dest_path)
         img = self.sr.process(img)
         dest_ext = Path(dest_path).suffix
